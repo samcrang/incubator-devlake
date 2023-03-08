@@ -101,6 +101,7 @@ Then create a class that modelizes the data your stream is going to collect.
 
 ```python
 from pydevlake.model import ToolModel
+from sqlmodel import Field
 
 class User(ToolModel, table=True):
     id: str = Field(primary_key=True)
