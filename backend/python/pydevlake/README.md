@@ -24,7 +24,12 @@ Move to the newly created plugin directory and run `poetry install`.
 Create a `main.py` file with the following content:
 
 ```python
+#!/usr/bin/env python3
+
+from typing import Type, Iterable
 from pydevlake import Plugin, Connection
+import pydevlake.message as msg
+from pydevlake.model import ToolScope, DomainScope, Connection
 
 
 class MyPluginConnection(Connection):
@@ -43,10 +48,25 @@ class MyPlugin(Plugin):
     def streams(self):
         return []
 
+    def domain_scopes(self, tool_scope: ToolScope) -> Iterable[DomainScope]:
+        pass
+
+    def remote_scopes(self, connection: Connection, group_id: str) -> list[ToolScope]:
+        pass
+
+    def remote_scope_groups(self, connection: Connection) -> list[msg.RemoteScopeGroup]:
+        pass
+
+    @property
+    def tool_scope_type(self) -> Type[ToolScope]:
+        pass
+
 
 if __name__ == '__main__':
     MyPlugin.start()
 ```
+
+You'll need to make it executable with `chmod +x myplugin/main.py`.
 
 This file is the entry point to your plugin.
 It specifies three things:
