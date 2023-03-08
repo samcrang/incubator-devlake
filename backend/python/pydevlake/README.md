@@ -139,7 +139,7 @@ class Users(Stream):
 This stream will collect raw user data, e.g. as parsed JSON objects, extract this raw data as your
 tool-specific user model, then convert them into domain-layer user models.
 
-The `tool_model` class attribute declares the tool model class that is extracted by this strem.
+The `tool_model` class attribute declares the tool model class that is extracted by this stream.
 The `domain_types` class attribute is a list of domain types this stream is about.
 
 The `collect` method takes a `state` dictionary and a context object and yields tuples of raw data and new state.
