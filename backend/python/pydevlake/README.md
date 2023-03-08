@@ -119,6 +119,7 @@ You can use `SQLModel` features like [declaring relationships with other models]
 Create a new file for your first stream in a `streams` directory.
 
 ```python
+from typing import Tuple, Iterable
 from pydevlake import Stream, DomainType
 from pydevlake.domain_layer.crossdomain import User as DomainUser
 
