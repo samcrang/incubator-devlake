@@ -17,7 +17,7 @@ In the `pyproject.toml` file and add the following line at the end of the `[tool
 pydevlake = { path = "../../pydevlake", develop = false }
 ```
 
-Now run `poetry install`.
+Move to the newly created plugin directory and run `poetry install`.
 
 ## Create `main` file
 
