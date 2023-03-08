@@ -325,8 +325,7 @@ The context is a JSON object that must at least contain:
 Also, python plugins communicate with go side over an extra file descriptor 3, so you should
 redirect to stdout when testing your plugin.
 
-```
-console
+```console
 CTX='{"db_url":"sqlite+pysqlite:///:memory:", "connection": {...your connection attrs here...}}'
 poetry run myplugin/main.py $CTX users 3>&1
 ```
