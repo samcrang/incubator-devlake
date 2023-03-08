@@ -97,7 +97,7 @@ A data stream groups the logic for:
 ### Create a tool model
 
 Create a `models.py` file.
-Then create a class that modelizes the data your stream is going to collect.
+Then create a class that represents the data your stream is going to collect.
 
 ```python
 from pydevlake.model import ToolModel
